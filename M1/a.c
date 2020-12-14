@@ -19,14 +19,14 @@ int main(int argc, char* argv[])
 		exit(1);
 
 
-//	if(fd =  open(config_filename,O_RDONLY)<0)
-//	{
-//		printf("\nerror opening file %s\n",config_filename);
-//		exit(1);
-//	}
+	if(fd =  open(config_filename,O_RDONLY)<0)
+	{
+		printf("\nerror opening file %s\n",config_filename);
+		exit(1);
+	}
 	
-//	size = read(fd,buff,500);
-/*	for (int i = 0; i < size; i++)
+	size = read(fd,buff,500);
+	for (int i = 0; i < size; i++)
 	{
 		if (buff[i] == '\n') {
 			stop++;
@@ -51,25 +51,25 @@ int main(int argc, char* argv[])
 			stop++;
 		}
 
-	}*/
+	}
 	dir_exp = (char*)malloc(sizeof(char) * j);
 	strcpy(dir_exp, buff1);
 
 	DIR * dir = opendir(dir_path);
 	struct dirent * mydirent = NULL;
-	//while(NULL != (mydirent = readdir(dir)))
-	//{
-	//spid = fork();
-	//if(spid == 0)
-	//	break;
-	//}
+	while(NULL != (mydirent = readdir(dir)))
+	{
+	spid = fork();
+	if(spid == 0)
+		break;
+	}
 	
-	//if(spid == 0)
-	//{
+	if(spid == 0)
+	{
         char* std_name = (char*)malloc(sizeof(mydirent->d_name));
 	std_name = mydirent->d_name;
 	printf("%s", std_name);
-	//execl(gcc std_name.c -o main.out);
-	//}
+	execl(gcc std_name.c -o main.out);
+	}
 return 0;
 }
