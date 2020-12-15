@@ -96,7 +96,7 @@ int size = read(fd,&buff,500);
 	pid_t child;
 	pid_t baby;
 	int i;
-	for(i=0; i<num_students; i++)
+	for(i=0; i<num_students+1; i++)
 	{
 		if((child = fork()) == 0)
 			{
