@@ -87,7 +87,9 @@ int size = read(fd,&buff,500);
 
 	  }
 	}
-
+	for(int k=0;k<num_students;k++)
+		printf("\n%s\n",students[k]);
+//	printf("\n%s\n%s\n%s\n%s\n", students[0], students[1], students[2], students[3]);
 //	------------------------------------------
 	pid_t parent = getpid(); //Storing Daddy ;)
 	pid_t children[num_students];
